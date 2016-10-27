@@ -10,17 +10,22 @@ public class HarpoonBulletController : MonoBehaviour
     private float speed;
 
     private Rigidbody2D rigidBody;
+    private Renderer renderer;
 
     // Use this for initialization
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        renderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (!renderer.isVisible)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D coll)
