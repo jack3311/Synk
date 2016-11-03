@@ -65,6 +65,10 @@ public class PlayerMovement : MonoBehaviour {
             transform.position = CheckpointController.GetLastActiveCheckpointPosition();
         }
 
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            GetComponent<HarpoonController>().ActivateHarpoon();
+        }
 
         if (swimmingLeft) myRigidbody.AddForce(new Vector2(-swimForce, 0));
         if (swimmingUp) myRigidbody.AddForce(new Vector2(0, swimForce));

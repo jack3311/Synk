@@ -15,6 +15,9 @@ public class HarpoonController : MonoBehaviour {
     [SerializeField]
     private float offset;
 
+    [SerializeField]
+    private float harpoonDurationSecs;
+
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
 
@@ -22,21 +25,27 @@ public class HarpoonController : MonoBehaviour {
 
     private LineRenderer lineRenderer;
 
+    private float disableTime = 0f;
+
 	// Use this for initialization
 	void Start () {
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
+
+    public void ActivateHarpoon()
+    {
+        disableTime = Mathf.Max(Time.fixedTime + harpoonDurationSecs, disableTime + harpoonDurationSecs);
+    }
 	
 	// Update is called once per frame
 	void Update () {
+
         harpoonFireCounter += Time.deltaTime;
 
         bool canFire = (GameObject.FindGameObjectsWithTag("HarpoonBullet").Length == 0);
 
-
-
-        if (Input.GetMouseButtonDown(1) && harpoonFireCounter >= 2f && canFire)
+        if (Input.GetMouseButtonDown(1) && harpoonFireCounter >= 2f && canFire && Time.fixedTime <= disableTime)
         {
             harpoonFireCounter = 0;
 
