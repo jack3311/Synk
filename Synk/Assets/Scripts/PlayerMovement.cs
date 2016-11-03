@@ -60,6 +60,11 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.S)) swimmingDown = false;
         if (Input.GetKeyUp(KeyCode.D)) swimmingRight = false;
 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            transform.position = CheckpointController.GetLastActiveCheckpointPosition();
+        }
+
 
         if (swimmingLeft) myRigidbody.AddForce(new Vector2(-swimForce, 0));
         if (swimmingUp) myRigidbody.AddForce(new Vector2(0, swimForce));
