@@ -2,7 +2,10 @@
 using System.Collections;
 
 public class MineController : MonoBehaviour {
-
+    // Final additions
+    // Chain to game object
+    // Invuln after being hit
+    // Not necessary additions but include in polishing
     private LineRenderer lineRenderer;
 
     [SerializeField]
@@ -34,10 +37,13 @@ public class MineController : MonoBehaviour {
             // make the player lose a life
             // send him in A direction
 
-            Rigidbody2D playerRigidBody = coll.GetComponent<Rigidbody2D>();
+            if (!coll.GetComponent<ShieldController>().IsShieldActive())
+            {
+                Rigidbody2D playerRigidBody = coll.GetComponent<Rigidbody2D>();
+                // lose a life
+                playerRigidBody.AddForce(new Vector2(0, explosionForce));
 
-            playerRigidBody.AddForce(new Vector2(0, explosionForce));
-
+            }
             Destroy(this.gameObject);
         }
         else if (coll.CompareTag("HarpoonBullet"))
