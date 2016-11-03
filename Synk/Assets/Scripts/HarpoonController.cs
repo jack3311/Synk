@@ -32,8 +32,6 @@ public class HarpoonController : MonoBehaviour {
 	void Update () {
         harpoonFireCounter += Time.deltaTime;
 
-        Debug.Log(GameObject.FindGameObjectsWithTag("HarpoonBullet").Length);
-
         bool canFire = (GameObject.FindGameObjectsWithTag("HarpoonBullet").Length == 0);
 
 
