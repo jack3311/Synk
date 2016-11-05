@@ -11,6 +11,9 @@ public class MineController : MonoBehaviour {
     [SerializeField]
     private float explosionForce;
 
+    [SerializeField]
+    private GameObject explosionPrefab;
+
 
 	// Use this for initialization
 	void Start () {
@@ -50,5 +53,10 @@ public class MineController : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
+
+        //Create explosion effect
+
+        var explosionInstance = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Destroy(explosionInstance, 3);
     }
 }
