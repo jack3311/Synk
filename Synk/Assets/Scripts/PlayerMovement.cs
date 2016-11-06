@@ -75,5 +75,7 @@ public class PlayerMovement : MonoBehaviour {
         if (swimmingRight) myRigidbody.AddForce(new Vector2(swimForce, 0));
         if (swimmingDown) myRigidbody.AddForce(new Vector2(0, -swimForce));
 
+
+        transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(myRigidbody.velocity.y, myRigidbody.velocity.x) * Mathf.Rad2Deg - 90, new Vector3(0, 0, 1)); //Quaternion.LookRotation(myRigidbody.velocity, new Vector3(0, 1, 0));
     }
 }
