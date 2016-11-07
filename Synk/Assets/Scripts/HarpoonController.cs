@@ -85,8 +85,10 @@ public class HarpoonController : MonoBehaviour {
         {
             //Update line renderer
             lineRenderer.SetVertexCount(2);
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, GameObject.FindGameObjectWithTag("HarpoonBullet").transform.position);
+            lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y, -1));
+            Vector3 position2 = GameObject.FindGameObjectWithTag("HarpoonBullet").transform.position;
+            position2.z = -1;
+            lineRenderer.SetPosition(1, position2);
         }
     }
 }

@@ -6,6 +6,11 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D myRigidbody;
     private BoxCollider2D myBoxCollider;
 
+    private ParticleSystem bubbleGunParticles;
+
+    [SerializeField]
+    private GameObject bubbleGunParticlesObject;
+
     public float bubbleGunForce;
     public float swimForce;
 
@@ -20,6 +25,7 @@ public class PlayerMovement : MonoBehaviour {
     void Start () {
         myRigidbody = GetComponent<Rigidbody2D>();
         myBoxCollider = GetComponent<BoxCollider2D>();
+        bubbleGunParticles = bubbleGunParticlesObject.GetComponent<ParticleSystem>();
     }
 	
 	// Update is called once per frame
@@ -36,6 +42,10 @@ public class PlayerMovement : MonoBehaviour {
             bubbleGunActive = false;
         }
 
+        bubbleGunParticlesObject.transform.position = transform.position;
+        bubbleGunParticles.enableEmission = bubbleGunActive;
+        
+
         if (bubbleGunActive)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -46,6 +56,8 @@ public class PlayerMovement : MonoBehaviour {
             //myRigidbody.velocity = myRigidbody.velocity + fDirection * dt;
 
             myRigidbody.AddForce(fDirection, ForceMode2D.Force);
+
+            bubbleGunParticlesObject.transform.LookAt(mousePos);
 
             //myRigidbody.velocity = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         }
