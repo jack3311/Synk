@@ -13,6 +13,9 @@ public class CollectableController : MonoBehaviour {
     [SerializeField]
     private CollectibleType collectibleType;
 
+    [SerializeField]
+    private GameObject collectEffect;
+
 	void Start () {
 	
 	}
@@ -37,11 +40,13 @@ public class CollectableController : MonoBehaviour {
                     break;
 
                 case CollectibleType.BOOTS:
-                    //other.GetComponent<BootsController>().ActivateBoots();
+                    other.GetComponent<BootsController>().ActivateBoots();
                     break;
             }
-        }
 
-        Destroy(this.gameObject);
+            Object collectEffectInstance = Instantiate(collectEffect, transform.position, Quaternion.identity);
+            Destroy(collectEffectInstance, 1f);
+            Destroy(this.gameObject);
+        }
     }
 }
