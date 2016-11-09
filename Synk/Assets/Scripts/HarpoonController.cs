@@ -52,10 +52,10 @@ public class HarpoonController : MonoBehaviour {
             GameObject harpoonBullet = Instantiate(harpoonBulletPrefab);
 
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 fDirection = mousePos - (rigidBody.position + (0.5f * boxCollider.size));
+            Vector2 fDirection = mousePos - rigidBody.position;
             fDirection.Normalize();
 
-            harpoonBullet.transform.position = new Vector2(transform.position.x, transform.position.y) + fDirection * boxCollider.size.magnitude;
+            harpoonBullet.transform.position = new Vector2(transform.position.x, transform.position.y) + fDirection * 2f;
 
             HarpoonBulletController harpoonScript = harpoonBullet.GetComponent<HarpoonBulletController>();
 

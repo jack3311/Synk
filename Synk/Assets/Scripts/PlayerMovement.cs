@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField]
     private GameObject bubbleGunParticlesObject;
 
+    [SerializeField]
+    private GameObject harpoonGunSprite;
+
     public float bubbleGunForce;
     public float swimForce;
 
@@ -26,6 +29,7 @@ public class PlayerMovement : MonoBehaviour {
         myRigidbody = GetComponent<Rigidbody2D>();
         myBoxCollider = GetComponent<BoxCollider2D>();
         bubbleGunParticles = bubbleGunParticlesObject.GetComponent<ParticleSystem>();
+        harpoonGunSprite = GameObject.Find("PlayerHarpoon");
     }
 	
 	// Update is called once per frame
@@ -44,12 +48,12 @@ public class PlayerMovement : MonoBehaviour {
 
         bubbleGunParticlesObject.transform.position = transform.position;
         bubbleGunParticles.enableEmission = bubbleGunActive;
-        
+
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (bubbleGunActive)
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 fDirection = mousePos - (myRigidbody.position + (0.5f * myBoxCollider.size));
+            Vector2 fDirection = mousePos - (myRigidbody.position);
             fDirection.Normalize();
             fDirection *= -bubbleGunForce;
 
@@ -60,6 +64,19 @@ public class PlayerMovement : MonoBehaviour {
             bubbleGunParticlesObject.transform.LookAt(mousePos);
 
             //myRigidbody.velocity = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        }
+
+        if (mousePos.x > transform.position.x)
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+
+            /*HingeJoint2D harpoonHinge = harpoonGunSprite.GetComponent<HingeJoint2D>();
+            harpoonGunSprite.transform.RotateAround(new Vector3(harpoonHinge.anchor.x + transform.position.x,
+                harpoonHinge.anchor.y + transform.position.y, 0), new Vector3(0, 0, 1), 30);*/
+        }
+        else
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
 
         if (Input.GetKeyDown(KeyCode.A)) swimmingLeft = true;
