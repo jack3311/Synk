@@ -44,8 +44,11 @@ public class MineController : MonoBehaviour {
             {
                 Rigidbody2D playerRigidBody = coll.GetComponent<Rigidbody2D>();
                 // lose a life
-                playerRigidBody.AddForce(new Vector2(0, explosionForce));
-
+                
+                if (!PlayerLifeController.RemoveLife())
+                {
+                    playerRigidBody.AddForce(new Vector2(0, explosionForce));
+                }
             }
             Destroy(this.gameObject);
         }
