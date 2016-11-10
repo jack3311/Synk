@@ -32,7 +32,8 @@ public class PlayerLifeController : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         iPlayerCurrentLives = iPlayerMaxLives;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public static bool RemoveLife()

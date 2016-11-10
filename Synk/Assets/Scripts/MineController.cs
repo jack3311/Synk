@@ -61,5 +61,6 @@ public class MineController : MonoBehaviour {
 
         var explosionInstance = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(explosionInstance, 3);
+        Camera.main.GetComponent<CameraShake>().ShakeFor(0.5f);
     }
 }

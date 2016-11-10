@@ -46,6 +46,11 @@ public class ShipController : MonoBehaviour {
             foreach (GameObject go in explosionObjects)
                 Instantiate(go, coll.collider.transform.position, Quaternion.identity);
 
+            if (GetComponent<Renderer>().isVisible)
+            {
+                Camera.main.GetComponent<CameraShake>().ShakeFor(1f);
+            }
+
             Destroy(coll.gameObject, 0.01f);
         }
         

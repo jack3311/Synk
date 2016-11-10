@@ -37,6 +37,8 @@ public class HarpoonBulletController : MonoBehaviour
 
         playerRigidBody.AddForce(force);
 
+        Camera.main.GetComponent<CameraShake>().ShakeFor(0.3f);
+
         Destroy(this.gameObject);
     }
 }

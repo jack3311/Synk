@@ -45,7 +45,7 @@ public class HarpoonController : MonoBehaviour {
 
         bool canFire = (GameObject.FindGameObjectsWithTag("HarpoonBullet").Length == 0);
 
-        if (Input.GetMouseButtonDown(1) && harpoonFireCounter >= 2f && canFire && Time.fixedTime <= disableTime)
+        if (Input.GetMouseButtonDown(1) && harpoonFireCounter >= 0.5f && canFire && Time.fixedTime <= disableTime)
         {
             harpoonFireCounter = 0;
 

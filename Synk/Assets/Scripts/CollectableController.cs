@@ -16,8 +16,8 @@ public class CollectableController : MonoBehaviour {
     [SerializeField]
     private GameObject collectEffect;
 
-    [SerializeField]
-    private GameObject cameraObject;
+   // [SerializeField]
+    //private GameObject cameraObject;
 
 	void Start () {
 	
@@ -48,7 +48,7 @@ public class CollectableController : MonoBehaviour {
             }
 
 
-            cameraObject.GetComponent<CameraShake>().ShakeFor(0.3f);
+            Camera.main.GetComponent<CameraShake>().ShakeFor(0.3f);
             Object collectEffectInstance = Instantiate(collectEffect, transform.position, Quaternion.identity);
             Destroy(collectEffectInstance, 1f);
             Destroy(this.gameObject);
