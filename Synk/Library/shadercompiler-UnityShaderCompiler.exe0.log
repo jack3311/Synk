@@ -1,2 +1,120 @@
-Base path: D:/Applications/Unity/Editor/Data
+Base path: E:/Unity/Editor/Data
 Cmd: getPlatforms
+Cmd: preprocess
+  insize=9227 outsize=2043 ok=1
+Cmd: preprocess
+  insize=11318 outsize=798 ok=1
+Cmd: preprocess
+  insize=1689 outsize=334 ok=1
+Cmd: preprocess
+  insize=930 outsize=330 ok=1
+Cmd: preprocess
+  insize=1386 outsize=387 ok=1
+Cmd: preprocess
+  insize=3925 outsize=639 ok=1
+Cmd: preprocess
+  insize=1230 outsize=384 ok=1
+Cmd: preprocess
+  insize=6635 outsize=781 ok=1
+Cmd: preprocess
+  insize=1868 outsize=255 ok=1
+Cmd: preprocess
+  insize=1409 outsize=330 ok=1
+Cmd: preprocess
+  insize=1323 outsize=303 ok=1
+Cmd: preprocess
+  insize=2298 outsize=619 ok=1
+Cmd: preprocess
+  insize=966 outsize=252 ok=1
+Cmd: preprocess
+  insize=701 outsize=302 ok=1
+Cmd: preprocess
+  insize=6328 outsize=973 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=5596 outsize=642 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=5596 outsize=434 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=5603 outsize=782 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=5603 outsize=750 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=5607 outsize=690 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=5607 outsize=750 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=5608 outsize=690 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=5608 outsize=750 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=5612 outsize=794 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=5612 outsize=882 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=5613 outsize=794 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=5613 outsize=882 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: preprocess
+  insize=1199 outsize=241 ok=1
+Cmd: preprocess
+  insize=4371 outsize=504 ok=1
+Cmd: preprocess
+  insize=992 outsize=248 ok=1
+Cmd: preprocess
+  insize=13377 outsize=1893 ok=1
+Cmd: preprocess
+  insize=1025 outsize=333 ok=1
+Cmd: preprocess
+  insize=6203 outsize=732 ok=1
+Cmd: preprocess
+  insize=2834 outsize=762 ok=1
+Cmd: preprocess
+  insize=11756 outsize=2579 ok=1
+Cmd: preprocess
+  insize=1909 outsize=438 ok=1
+Cmd: preprocess
+  insize=4002 outsize=531 ok=1
+Cmd: preprocess
+  insize=1168 outsize=333 ok=1
+Cmd: preprocess
+  insize=1174 outsize=435 ok=1
+Cmd: preprocess
+  insize=737 outsize=249 ok=1
+Cmd: preprocess
+  insize=5320 outsize=887 ok=1
+Cmd: preprocess
+  insize=716 outsize=286 ok=1
+Cmd: preprocess
+  insize=720 outsize=299 ok=1
+Cmd: preprocess
+  insize=862 outsize=275 ok=1
+Cmd: preprocess
+  insize=2015 outsize=946 ok=1
+Cmd: preprocess
+  insize=5161 outsize=700 ok=1
+Cmd: preprocess
+  insize=1139 outsize=364 ok=1
+Cmd: preprocess
+  insize=512 outsize=241 ok=1
+Cmd: preprocess
+  insize=5418 outsize=865 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4802 outsize=782 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4802 outsize=646 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4806 outsize=690 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4806 outsize=750 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4807 outsize=690 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4807 outsize=750 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4811 outsize=794 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4811 outsize=882 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4812 outsize=794 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4812 outsize=882 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
