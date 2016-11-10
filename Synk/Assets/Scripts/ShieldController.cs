@@ -6,6 +6,9 @@ public class ShieldController : MonoBehaviour {
     [SerializeField]
     private float shieldDurationSecs;
 
+    [SerializeField]
+    private GameObject playerShieldImage;
+
     private float disableTime = 0f;
 
 	// Use this for initialization
@@ -24,6 +27,6 @@ public class ShieldController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        playerShieldImage.GetComponent<SpriteRenderer>().enabled = IsShieldActive();
     }
 }

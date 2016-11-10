@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (PlayerLifeController.IsDead()) return;
+
         float dt = Time.deltaTime;
 
         if (Input.GetMouseButtonDown(0))
@@ -70,6 +72,8 @@ public class PlayerMovement : MonoBehaviour {
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 
+            //harpoonGunSprite.transform.localScale = new Vector3(Mathf.Abs(harpoonGunSprite.transform.localScale.x), harpoonGunSprite.transform.localScale.y, harpoonGunSprite.transform.localScale.z);
+
             /*HingeJoint2D harpoonHinge = harpoonGunSprite.GetComponent<HingeJoint2D>();
             harpoonGunSprite.transform.RotateAround(new Vector3(harpoonHinge.anchor.x + transform.position.x,
                 harpoonHinge.anchor.y + transform.position.y, 0), new Vector3(0, 0, 1), 30);*/
@@ -77,6 +81,9 @@ public class PlayerMovement : MonoBehaviour {
         else
         {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+
+            //harpoonGunSprite.transform.localScale = new Vector3(-Mathf.Abs(harpoonGunSprite.transform.localScale.x), harpoonGunSprite.transform.localScale.y, harpoonGunSprite.transform.localScale.z);
+
         }
 
         if (Input.GetKeyDown(KeyCode.A)) swimmingLeft = true;

@@ -13,6 +13,10 @@ public class FishController : MonoBehaviour {
 
     [SerializeField]
     private float speed;
+
+    [SerializeField]
+    private float explosionForce;
+
     // Use this for initialization
     void Start () {
         cpPos1 = pos1.position;
@@ -21,7 +25,7 @@ public class FishController : MonoBehaviour {
         rigidBody = GetComponent<Rigidbody2D>();
         transform.position = cpPos1;
     }
-	
+
 	// Update is called once per frame
 	void Update () {
         Vector2 middle = 0.5f * (cpPos2 - cpPos1) + cpPos1;
@@ -32,7 +36,8 @@ public class FishController : MonoBehaviour {
         //float vel = (Mathf.Cos(time * speed) * speed * 0.5f);
 
         Vector2 accel = -Mathf.Pow(2 * Mathf.PI * speed, 2) * delta.magnitude * delta.normalized;
-        if ((-Mathf.Pow(2 * Mathf.PI * speed + (Mathf.PI / 2), 2) * delta.normalized).x > 0)
+        
+        if (rigidBody.velocity.x > 0)
         {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
@@ -44,5 +49,18 @@ public class FishController : MonoBehaviour {
         //rigidBody.AddForce(delta * force);
 
         rigidBody.velocity += accel * Time.deltaTime;
+    }
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.CompareTag("Player"))
+        {
+            Rigidbody2D playerRigidBody = coll.GetComponent<Rigidbody2D>();
+            // lose a life
+
+            if (!PlayerLifeController.RemoveLife())
+            {
+                playerRigidBody.AddForce(new Vector2(0, explosionForce));
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class PlayerLifeController : MonoBehaviour
@@ -8,11 +9,13 @@ public class PlayerLifeController : MonoBehaviour
     private static int iPlayerCurrentLives = 3;
 
     private static Rigidbody2D myRigidbody;
+    private static ShieldController myShieldController;
 
     // Use this for initialization
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        myShieldController = GetComponent<ShieldController>();
     }
 
     // Update is called once per frame
@@ -21,15 +24,28 @@ public class PlayerLifeController : MonoBehaviour
         if (PlayerLifeController.IsDead())
         {
             // restart level
-            Application.LoadLevel(Application.loadedLevelName);
-            iPlayerCurrentLives = iPlayerMaxLives;
+            StartCoroutine(LoadLevelAfterDelay(2f));
         }
+    }
+
+    IEnumerator LoadLevelAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        iPlayerCurrentLives = iPlayerMaxLives;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public static bool RemoveLife()
     {
+        if (myShieldController.IsShieldActive())
+        {
+        }
+        else
+        {
+            iPlayerCurrentLives = iPlayerCurrentLives - 1;
 
-        iPlayerCurrentLives = iPlayerCurrentLives - 1;
+        }
+
 
         // If player dies
         if (iPlayerCurrentLives <= 0)

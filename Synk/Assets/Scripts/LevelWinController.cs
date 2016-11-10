@@ -21,7 +21,7 @@ public class LevelWinController : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            Application.LoadLevel(TargetSceneName);
+            SceneManager.LoadScene(TargetSceneName);
         }
     }
 }
