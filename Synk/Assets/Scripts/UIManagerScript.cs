@@ -5,6 +5,9 @@ using System.Collections;
 
 public class UIManagerScript : MonoBehaviour {
 
+    public static bool soundEffectsEnabled = true;
+    public static bool musicEnabled = true;
+
     [SerializeField]
     private GameObject UICanvas;
 
@@ -89,6 +92,17 @@ public class UIManagerScript : MonoBehaviour {
         {
             b.interactable = false;
         }
+    }
+
+    public void OptionsMusicButton()
+    {
+        musicEnabled = !musicEnabled;
+        GameObject.FindGameObjectWithTag("SoundManager").GetComponent<AudioSource>().mute = !GameObject.FindGameObjectWithTag("SoundManager").GetComponent<AudioSource>().mute;
+    }
+
+    public void OptionsSFXButton()
+    {
+        soundEffectsEnabled = !soundEffectsEnabled;
     }
 
     public void QuitButton()

@@ -14,9 +14,11 @@ public class MineController : MonoBehaviour {
     [SerializeField]
     private GameObject explosionPrefab;
 
+    [SerializeField]
+    private GameObject explosionSound;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -59,8 +61,18 @@ public class MineController : MonoBehaviour {
 
         //Create explosion effect
 
-        var explosionInstance = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        Destroy(explosionInstance, 3);
-        Camera.main.GetComponent<CameraShake>().ShakeFor(0.5f);
+        if (GetComponent<Renderer>().isVisible)
+        {
+            var explosionInstance = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(explosionInstance, 3);
+
+            if (UIManagerScript.soundEffectsEnabled)
+            {
+                var soundInstance = Instantiate(explosionSound, transform.position, Quaternion.identity);
+                Destroy(soundInstance, 3);
+            }
+
+            Camera.main.GetComponent<CameraShake>().ShakeFor(0.5f);
+        }
     }
 }

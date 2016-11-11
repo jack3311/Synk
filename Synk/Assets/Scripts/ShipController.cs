@@ -12,6 +12,9 @@ public class ShipController : MonoBehaviour {
     [SerializeField]
     private float knockbackForce;
 
+    [SerializeField]
+    private GameObject explosionSound;
+
     // Use this for initialization
     void Start ()
     {
@@ -49,6 +52,13 @@ public class ShipController : MonoBehaviour {
             if (GetComponent<Renderer>().isVisible)
             {
                 Camera.main.GetComponent<CameraShake>().ShakeFor(1f);
+
+
+                if (UIManagerScript.soundEffectsEnabled)
+                {
+                    var soundInstance = Instantiate(explosionSound, transform.position, Quaternion.identity);
+                    Destroy(soundInstance, 3);
+                }
             }
 
             Destroy(coll.gameObject, 0.01f);

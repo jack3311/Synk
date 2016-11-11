@@ -21,6 +21,7 @@ public class LevelWinController : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            PlayerLifeController.ResetLives();
             SceneManager.LoadScene(TargetSceneName);
         }
     }

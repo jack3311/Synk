@@ -70,4 +70,14 @@ public class PlayerLifeController : MonoBehaviour
             return false;
         }
     }
+
+    public static int GetLives()
+    {
+        return iPlayerCurrentLives;
+    }
+
+    public static void ResetLives()
+    {
+        iPlayerCurrentLives = iPlayerMaxLives;
+    }
 }

@@ -37,6 +37,16 @@ public class HarpoonController : MonoBehaviour {
     {
         disableTime = Mathf.Max(Time.fixedTime + harpoonDurationSecs, disableTime + harpoonDurationSecs);
     }
+
+    public float TimeRemaining()
+    {
+        return disableTime - Time.fixedTime;
+    }
+
+    public bool IsHarpoonActive()
+    {
+        return Time.fixedTime <= disableTime;
+    }
 	
 	// Update is called once per frame
 	void Update () {
