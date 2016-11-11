@@ -11,6 +11,12 @@ public class LivesTextScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        GetComponent<Text>().text = "Lives : " + PlayerLifeController.GetLives().ToString();
+        //GetComponent<Text>().text = "Lives : " + PlayerLifeController.GetLives().ToString();
+        transform.GetChild(0).GetComponent<Image>().enabled = false;
+        transform.GetChild(1).GetComponent<Image>().enabled = false;
+        transform.GetChild(2).GetComponent<Image>().enabled = false;
+
+        if (PlayerLifeController.GetLives() > 0)
+            transform.GetChild(PlayerLifeController.GetLives() - 1).GetComponent<Image>().enabled = true;
 	}
 }
